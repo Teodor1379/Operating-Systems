@@ -18,7 +18,7 @@ cp f3 ~/dir3
 
 
 
-# Solution 2 - Single Arguments
+# Solution 2 - Single Argument
 
 mkdir -p ~/practice/01
 
