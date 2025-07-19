@@ -10,11 +10,13 @@ SPECIAL_NAME="philip-j-fry.txt"
 
 
 
-if [[ $# -ne 1 ]]; then
+if [[ "${#}" -ne 1 ]]; then
     echo "Невалиден брой Аргументи";
 
     exit 1;
 fi
+
+
 
 if [[ ! -f "${1}" ]]; then
     echo "Грешка на Аргумента - НЕ Е ФАЙЛ!";
