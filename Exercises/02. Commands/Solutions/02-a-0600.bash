@@ -2,6 +2,10 @@
 
 
 
+# 02-a-0600
+
+
+
 # Solution 1 - Multiple Arguments
 
 mkdir -p ~/practice/01
