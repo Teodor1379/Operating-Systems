@@ -2,6 +2,10 @@
 
 
 
+# 02-a-0601
+
+
+
 mkdir -p ~/practice/01
 
 touch ~/practice/01/f{1,2,3}
