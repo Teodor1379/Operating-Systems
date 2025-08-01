@@ -6,4 +6,4 @@
 
 
 
-find ~ -type f -size +42c 2> /dev/null;
+find ~ -type f -size +42c 2> /dev/null
