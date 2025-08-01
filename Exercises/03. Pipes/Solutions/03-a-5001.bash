@@ -6,4 +6,4 @@
 
 
 
-cat /etc/passwd | grep -c -v "/bin/shell";
+cat /etc/passwd | grep -c -v "/bin/shell"
