@@ -6,4 +6,4 @@
 
 
 
-ln -s /etc/passwd ~/passwd_symlink;
+ln -s /etc/passwd ~/passwd_symlink
