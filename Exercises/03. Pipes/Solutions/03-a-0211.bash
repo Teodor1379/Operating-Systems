@@ -6,4 +6,4 @@
 
 
 
-cat /etc/passwd | cut -c 2-6;
+cat /etc/passwd | cut -c 2-6
