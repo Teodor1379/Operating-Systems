@@ -6,4 +6,4 @@
 
 
 
-find /tmp -type f -gid "$(id -g)" -perms -g=w,o=w 2> /dev/null;
+find /tmp -type f -gid "$(id -g)" -perms -g=w,o=w 2> /dev/null
