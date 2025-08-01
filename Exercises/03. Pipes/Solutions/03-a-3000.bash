@@ -6,6 +6,6 @@
 
 
 
-df -P > dfOutFile;
+df -P > dfOutFile
 
-cat dfOutFile | head -n -1 | sort -n -k 2;
+cat dfOutFile | head -n -1 | sort -n -k 2
