@@ -6,4 +6,4 @@
 
 
 
-cat /etc/passwd | cut -d ':' -f 5 | tr "[:lower:]" "[:upper:]";
+cat /etc/passwd | cut -d ':' -f 5 | tr "[:lower:]" "[:upper:]"
