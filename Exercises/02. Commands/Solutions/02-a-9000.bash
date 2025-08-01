@@ -6,8 +6,8 @@
 
 
 
-tar -cf c_start.tar ~/myetc/c*;
+tar -cf c_start.tar ~/myetc/c*
 
-rm -rf ~/myetc;
+rm -rf ~/myetc
 
-rm c_start.tar;
+rm c_start.tar
