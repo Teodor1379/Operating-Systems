@@ -6,4 +6,4 @@
 
 
 
-cat /etc/passwd | cut -d ':' -f 5 > ~/users;
+cat /etc/passwd | cut -d ':' -f 5 > ~/users
