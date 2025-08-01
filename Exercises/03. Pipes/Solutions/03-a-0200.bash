@@ -6,4 +6,4 @@
 
 
 
-cat /etc/passwd | sort -t ':' -k 3;
+cat /etc/passwd | sort -t ':' -k 3
