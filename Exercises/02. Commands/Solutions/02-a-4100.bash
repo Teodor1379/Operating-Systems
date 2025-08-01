@@ -6,4 +6,4 @@
 
 
 
-find ~ -type f -mmin -60 2> /dev/null;
+find ~ -type f -mmin -60 2> /dev/null
