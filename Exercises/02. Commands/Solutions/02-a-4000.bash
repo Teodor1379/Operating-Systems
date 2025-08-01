@@ -2,8 +2,12 @@
 
 
 
-touch ~/permissions.txt
+# 02-a-4000
 
-chmod 435 ~/permissions.txt
 
-chmod u=r,g=wx,o=rx ~/permissions.txt
+
+touch ~/permissions.txt;
+
+chmod 435 ~/permissions.txt;
+
+chmod u=r,g=wx,o=rx ~/permissions.txt;
