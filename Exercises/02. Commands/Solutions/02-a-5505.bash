@@ -6,4 +6,4 @@
 
 
 
-find ~ -type f -newer ~/practice/01/f1 2> /dev/null;
+find ~ -type f -newer ~/practice/01/f1 2> /dev/null
