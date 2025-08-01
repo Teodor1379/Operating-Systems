@@ -6,8 +6,8 @@
 
 
 
-mkdir -p ~/practice-test/test1;
+mkdir -p ~/practice-test/test1
 
-touch ~/practice-test/test1/test.txt;
+touch ~/practice-test/test1/test.txt
 
-mv ~/practice-test/test1/test.txt ~/practice-test/test.txt;
+mv ~/practice-test/test1/test.txt ~/practice-test/test.txt
