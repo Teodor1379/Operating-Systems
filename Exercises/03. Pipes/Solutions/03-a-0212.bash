@@ -6,4 +6,4 @@
 
 
 
-cat /etc/passwd | cut -d ':' -f 1,6;
+cat /etc/passwd | cut -d ':' -f 1,6
