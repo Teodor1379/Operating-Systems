@@ -6,4 +6,4 @@
 
 
 
-head /etc/services -n 5;
+head /etc/services -n 5
