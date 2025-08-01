@@ -2,6 +2,10 @@
 
 
 
+# 03-b-0300
+
+
+
 # Solution 1 - ID
 
 cat /etc/passwd | grep "$(id -u)" | cut -d ':' -f 4
