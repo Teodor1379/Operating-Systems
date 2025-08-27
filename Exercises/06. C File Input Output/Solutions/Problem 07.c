@@ -65,12 +65,12 @@ int main(int argc, char* argv[]) {
     char* directoryName = NULL;
 
     if (dir[strlen(dir) - 1] != '/') {
-        directoryName = malloc(strlen(dir) + 1);
+        directoryName = malloc(strlen(dir) + 2);
 
         strcpy(directoryName, dir);
         strcat(directoryName, "/");
     } else {
-        directoryName = malloc(strlen(dir));
+        directoryName = malloc(strlen(dir) + 1);
 
         strcpy(directoryName, dir);
     }
@@ -177,7 +177,7 @@ int readingSafe(const char* filePath, int descriptor, void* memory, size_t size)
 
     int result = read(descriptor, memory, size);
 
-    if (result == -1 || (size_t)(result) != size) {
+    if (result == -1) {
         closingAllSafe();
 
         errx(5, "%s: %s", ERROR_FILE_R, filePath);
@@ -192,7 +192,7 @@ int writingSafe(const char* filePath, int descriptor, void* memory, size_t size)
 
     int result = write(descriptor, memory, size);
 
-    if (result == -1) {
+    if (result == -1 || (size_t)(result) != size) {
         closingAllSafe();
 
         errx(6, "%s: %s", ERROR_FILE_W, filePath);
