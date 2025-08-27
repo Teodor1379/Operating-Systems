@@ -83,11 +83,11 @@ int main(int argc, char* argv[]) {
 
 
 
-void openingSafe(const char* filePath, int modes, mode_t rights, int* memory) {
+void openingSafe(const char* filePath, int flags, mode_t modes, int* memory) {
     assert(filePath !=  NULL);
     assert(memory   !=  NULL);
 
-    *memory = open(filePath, modes, rights);
+    *memory = open(filePath, flags, modes);
 
     if (*memory < 0) {
         closingSafeAllDesc();
@@ -142,7 +142,7 @@ int writingSafe(const char* filePath, int descriptor, void* memory, size_t size)
 
     int result = write(descriptor, memory, size);
 
-    if (result == -1 || result != sizeof(size)) {
+    if (result == -1 || (size_t)(result) != size) {
         closingSafeAllDesc();
 
         err(4, "%s: %s", ERROR_FILE_W, filePath);
