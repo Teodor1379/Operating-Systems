@@ -47,7 +47,7 @@ int descriptors[3] = { -1, -1, -1 };
 
 
 
-void copyContent(int, int,  const char*, const char*);
+void copyContent(int*, int*, const char*, const char*);
 
 
 
@@ -61,14 +61,14 @@ int main(int argc, char* argv[]) {
     const char* file2 = argv[2];
     const char* file3 = "TEMPF";
 
-    openingSafe(file1, O_RDWR | O_CREAT          , S_IRUSR | S_IWUSR, &descriptors[0]);
-    openingSafe(file2, O_RDWR | O_CREAT          , S_IRUSR | S_IWUSR, &descriptors[1]);
-    openingSafe(file3, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR, &descriptors[2]);
+    openingSafe(file1, O_RDONLY | O_CREAT           , S_IRUSR | S_IWUSR, &descriptors[0]);
+    openingSafe(file2, O_RDONLY | O_CREAT           , S_IRUSR | S_IWUSR, &descriptors[1]);
+    openingSafe(file3, O_WRONLY | O_CREAT | O_TRUNC , S_IRUSR | S_IWUSR, &descriptors[2]);
 
 
-    copyContent(descriptors[0], descriptors[2], file1, file3);
-    copyContent(descriptors[1], descriptors[0], file2, file1);
-    copyContent(descriptors[2], descriptors[1], file3, file2);
+    copyContent(&descriptors[0], &descriptors[2], file1, file3);
+    copyContent(&descriptors[1], &descriptors[0], file2, file1);
+    copyContent(&descriptors[2], &descriptors[1], file3, file2);
 
 
 
@@ -169,29 +169,26 @@ int seekingSafe(const char* filePath, int descriptor, off_t offset, int flags) {
 
 
 
-void copyContent(int descriptor1, int descriptor2, const char* filePath1, const char* filePath2) {
-    assert(filePath1 != NULL);
-    assert(filePath1 != NULL);
+void copyContent(int* descriptor1, int* descriptor2, const char* filePath1, const char* filePath2) {
+    assert(descriptor1  !=  NULL);
+    assert(descriptor2  !=  NULL);
+    assert(filePath1    !=  NULL);
+    assert(filePath2    !=  NULL);
 
-    seekingSafe(filePath1, descriptor1, 0, SEEK_SET);
+    seekingSafe(filePath1, *descriptor1, 0, SEEK_SET);
 
     while (1) {
         char c = 0;
 
-        int reading = readingSafe(filePath1, descriptor1, &c, sizeof(char));
+        int reading = readingSafe(filePath1, *descriptor1, &c, sizeof(char));
 
         if (reading == 0) {
             break;
         }
 
-        writingSafe(filePath2, descriptor2, &c, sizeof(char));
+        writingSafe(filePath2, *descriptor2, &c, sizeof(char));
     }
 
-    seekingSafe(filePath1, descriptor1, 0, SEEK_SET);
-
-    if (ftruncate(descriptor1, 0) < 0) {
-        closingAllSafe();
-
-        errx(6, "%s: %s", ERROR_FILE_T, filePath1);
-    }
+    closingSafe(*descriptor1);  openingSafe(filePath1, O_WRONLY, S_IRUSR | S_IWUSR, descriptor1);
+    closingSafe(*descriptor2);  openingSafe(filePath2, O_RDONLY, S_IRUSR | S_IWUSR, descriptor2);
 }
