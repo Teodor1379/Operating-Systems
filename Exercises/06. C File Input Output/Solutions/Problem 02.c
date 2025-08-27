@@ -98,7 +98,6 @@ void openingSafe(const char* filePath, int flags, mode_t modes, int* memory) {
 
 
 
-
 void closingSafe(int descriptor) {
     int oldErrno = errno;
 
