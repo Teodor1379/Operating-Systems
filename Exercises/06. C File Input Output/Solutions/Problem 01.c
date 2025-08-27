@@ -52,8 +52,8 @@ int main(int argc, char* argv[]) {
     const char* file1 = argv[1];
     const char* file2 = argv[2];
 
-    openingSafe(file1,  O_RDONLY                  , S_IRUSR           , &descriptors[0]);
-    openingSafe(file2,  O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR , &descriptors[1]);
+    openingSafe(file1,  O_RDONLY                    , S_IRUSR           , &descriptors[0]);
+    openingSafe(file2,  O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR , &descriptors[1]);
 
 
     while (1) {
