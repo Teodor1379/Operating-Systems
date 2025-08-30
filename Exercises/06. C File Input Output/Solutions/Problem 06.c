@@ -23,7 +23,6 @@ const char* ERROR_FILE_W = "Error while writing the file!";
 
 
 
-
 void openingSafe(const char*, int, mode_t, int* );
 void closingSafe(int                            );
 
