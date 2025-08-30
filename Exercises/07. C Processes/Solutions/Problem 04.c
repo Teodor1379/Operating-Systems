@@ -22,7 +22,6 @@ int writingSafe(const char* filePath, int descriptor, void* memory, size_t size)
 
 
 
-
 void executeCommandFork(char);
 
 
