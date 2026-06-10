@@ -20,7 +20,7 @@
 const char* ERROR_FILE_W = "Error while writing the file!";
 
 
-const char* ERROR_FORK = "Error while fork command!";
+const char* ERROR_FORK = "Error while fork command!"; 
 const char* ERROR_WAIT = "Error while wait command!";
 const char* ERROR_PIPE = "Error while pipe command!";
 const char* ERROR_EXEC = "Error while exec command!";
