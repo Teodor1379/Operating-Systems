@@ -32,7 +32,7 @@ const char* ERROR_WAIT_2 = "Error while wait - exit code!";
 
 
 void openingSafe(const char*, int, mode_t, int* );
-void closingSafe(int                            ); 
+void closingSafe(int                            );
 
 
 
