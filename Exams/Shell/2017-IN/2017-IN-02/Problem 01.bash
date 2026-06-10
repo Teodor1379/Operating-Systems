@@ -6,7 +6,7 @@
 
 
 
-find . -mindepth 1 -maxdepth 2 -type f -size 0 -exec rm -i {} \; 2> /dev/null
+find . -mindepth 1 -maxdepth 2 -type f -size 0 -exec rm -i {} \; 2> /dev/null 
 
 
 
